@@ -1,30 +1,45 @@
 import React, { FC } from 'react';
 
+// Third Parties
+import VisuallyHidden from '@reach/visually-hidden';
+import styled from 'styled-components';
+
+// Configurations
+import { Color, colors } from './colors';
+
 interface ColorPickerProps {
-  onChooseColor: (color: string) => void;
+  onChooseColor: (color: Color) => void;
 }
 
 export const ColorPicker: FC<ColorPickerProps> = ({ onChooseColor }) => {
-  const colors = [
-    'white',
-    'gold',
-    'teal',
-    'maroon',
-    'tomato',
-    'rebeccapurple',
-    'lime',
-    'deeppink',
-  ];
-
   return (
     <article>
-      <ul>
+      <ColorList>
         {colors.map((color) => (
-          <li key={color} onClick={() => onChooseColor(color)}>
-            {color}
+          <li key={color.code} onClick={() => onChooseColor(color)}>
+            <ColorButton color={color.code}>
+              <VisuallyHidden>{color.name}</VisuallyHidden>
+            </ColorButton>
           </li>
         ))}
-      </ul>
+      </ColorList>
     </article>
   );
 };
+
+const ColorList = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+`;
+
+const ColorButton = styled.button<{ color: string }>`
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 0;
+  border: none;
+  background-color: ${({ color }) => color};
+  cursor: pointer;
+`;

@@ -1,10 +1,10 @@
 import React, { FC, useCallback, useEffect, useRef } from 'react';
 
 interface TestProps {
-  currentColor: string;
+  currentColorCode: string;
 }
 
-export const Test: FC<TestProps> = ({ currentColor }) => {
+export const Test: FC<TestProps> = ({ currentColorCode }) => {
   const svgRef = useRef(null);
 
   const handleClick = useCallback(
@@ -13,9 +13,9 @@ export const Test: FC<TestProps> = ({ currentColor }) => {
       event.stopPropagation();
 
       const svgElement = event.target as SVGElement;
-      svgElement.setAttribute('fill', currentColor);
+      svgElement.setAttribute('fill', currentColorCode);
     },
-    [currentColor]
+    [currentColorCode]
   );
 
   const toggleClickEvents = useCallback(
