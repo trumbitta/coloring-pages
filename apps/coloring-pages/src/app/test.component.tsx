@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef } from "react";
+import React, { FC, useCallback, useEffect, useRef } from 'react';
 
 interface TestProps {
   currentColor: string;
@@ -13,7 +13,7 @@ export const Test: FC<TestProps> = ({ currentColor }) => {
       event.stopPropagation();
 
       const svgElement = event.target as SVGElement;
-      svgElement.setAttribute("fill", currentColor);
+      svgElement.setAttribute('fill', currentColor);
     },
     [currentColor]
   );
@@ -21,12 +21,10 @@ export const Test: FC<TestProps> = ({ currentColor }) => {
   const toggleClickEvents = useCallback(
     (
       elements: SVGElement[],
-      method: "addEventListener" | "removeEventListener"
+      method: 'addEventListener' | 'removeEventListener'
     ) => {
-      console.log(elements.length);
-
       for (const element of elements) {
-        element[method]("click", (event) => handleClick(event as MouseEvent));
+        element[method]('click', (event) => handleClick(event as MouseEvent));
       }
     },
     [handleClick]
@@ -35,16 +33,16 @@ export const Test: FC<TestProps> = ({ currentColor }) => {
   useEffect(() => {
     const svgElement = (svgRef.current as unknown) as SVGElement;
     const notableElementsNodeList = svgElement.querySelectorAll<SVGElement>(
-      "[id]"
+      '[id]'
     );
     const notableElements = Object.entries(notableElementsNodeList).map(
       ([_, element]) => element
     );
 
-    toggleClickEvents(notableElements, "addEventListener");
+    toggleClickEvents(notableElements, 'addEventListener');
 
     return () => {
-      toggleClickEvents(notableElements, "removeEventListener");
+      toggleClickEvents(notableElements, 'removeEventListener');
     };
   }, [toggleClickEvents]);
 
@@ -52,7 +50,6 @@ export const Test: FC<TestProps> = ({ currentColor }) => {
     <svg
       ref={svgRef}
       width="100%"
-      height="auto"
       viewBox="0 0 739 828"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

@@ -21,10 +21,10 @@
     }
   },
   "projects": {
-    "react-typescript": { "tags": [] },
-    "react-typescript-e2e": {
+    "coloring-pages": { "tags": [] },
+    "coloring-pages-e2e": {
       "tags": [],
-      "implicitDependencies": ["react-typescript"]
+      "implicitDependencies": ["coloring-pages"]
     }
   }
 }

@@ -1,3 +1,6 @@
 module.exports = {
-  projects: ['<rootDir>/apps/react-typescript'],
+  projects: [
+    '<rootDir>/apps/react-typescript',
+    '<rootDir>/apps/coloring-pages',
+  ],
 };

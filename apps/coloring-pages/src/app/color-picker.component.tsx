@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from 'react';
 
 interface ColorPickerProps {
   onChooseColor: (color: string) => void;
@@ -6,14 +6,14 @@ interface ColorPickerProps {
 
 export const ColorPicker: FC<ColorPickerProps> = ({ onChooseColor }) => {
   const colors = [
-    "white",
-    "gold",
-    "teal",
-    "maroon",
-    "tomato",
-    "rebeccapurple",
-    "lime",
-    "deeppink"
+    'white',
+    'gold',
+    'teal',
+    'maroon',
+    'tomato',
+    'rebeccapurple',
+    'lime',
+    'deeppink',
   ];
 
   return (
