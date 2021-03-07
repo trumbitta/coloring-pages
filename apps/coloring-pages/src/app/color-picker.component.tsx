@@ -27,6 +27,8 @@ export const ColorPicker: FC<ColorPickerProps> = ({ onChooseColor }) => {
   );
 };
 
+export const colorPickerHeightInRem = 6;
+
 const ColorList = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -37,7 +39,7 @@ const ColorList = styled.ul`
 
 const ColorButton = styled.button<{ color: string }>`
   width: 100%;
-  min-height: 3rem;
+  height: ${colorPickerHeightInRem / 2}rem;
   border-radius: 0;
   border: none;
   background-color: ${({ color }) => color};
