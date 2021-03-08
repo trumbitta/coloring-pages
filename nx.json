@@ -7,8 +7,8 @@
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "master" },
-  "npmScope": "temp-workspace",
+  "affected": { "defaultBase": "main" },
+  "npmScope": "coloring-pages",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -25,6 +25,7 @@
     "coloring-pages-e2e": {
       "tags": [],
       "implicitDependencies": ["coloring-pages"]
-    }
+    },
+    "images": { "tags": [] }
   }
 }

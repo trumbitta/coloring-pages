@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 // Components
 import { ColorPicker, colorPickerHeightInRem } from './color-picker.component';
-import { Test } from './test.component';
+import { ColoringPage } from './coloring-page.component';
 
 // Configurations
 import { Color, colors } from './colors';
@@ -18,7 +18,7 @@ export const App = () => {
 
   return (
     <Container>
-      <Image currentColorCode={currentColor.code} />
+      <ColoringPageStyled currentColorCode={currentColor.code} />
       <ColorPicker onChooseColor={(color) => setCurrentColor(color)} />
     </Container>
   );
@@ -29,7 +29,7 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const Image = styled(Test)`
+const ColoringPageStyled = styled(ColoringPage)`
   width: auto;
   height: 100%;
 `;
