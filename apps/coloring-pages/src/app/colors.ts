@@ -17,7 +17,7 @@ export const colors: Color[] = [
     name: 'Green',
   },
   {
-    code: '#00aaaa',
+    code: '#5895cb',
     name: 'Cyan',
   },
   {
@@ -25,7 +25,7 @@ export const colors: Color[] = [
     name: 'Red',
   },
   {
-    code: '#aa00aa',
+    code: '#a42c79',
     name: 'Magenta',
   },
   {
@@ -41,31 +41,31 @@ export const colors: Color[] = [
     name: 'Gray',
   },
   {
-    code: '#5555ff',
-    name: 'Light blue',
+    code: '#5a189a',
+    name: 'Violet',
   },
   {
     code: '#55ff55',
     name: 'Light green',
   },
   {
-    code: '#55FFFF',
+    code: '#c8def2',
     name: 'Light cyan',
   },
   {
-    code: '#ff5555',
-    name: 'Light red',
+    code: '#fb8500',
+    name: 'Orange',
   },
   {
-    code: '#ff55ff',
-    name: 'Light magenta',
+    code: '#efd6df',
+    name: 'Pink',
   },
   {
-    code: '#ffff55',
+    code: '#fee39a',
     name: 'Yellow',
   },
   {
-    code: '#ffffff',
-    name: 'White',
+    code: '#f8f9fa',
+    name: 'Ice',
   },
 ];
