@@ -18,6 +18,7 @@ export const App = () => {
 
   return (
     <Container>
+      <CurrentColor color={currentColor.code} />
       <ColoringPageStyled currentColorCode={currentColor.code} />
       <ColorPicker onChooseColor={(color) => setCurrentColor(color)} />
     </Container>
@@ -25,11 +26,18 @@ export const App = () => {
 };
 
 const Container = styled.div`
-  height: calc(100vh - ${colorPickerHeightInRem}rem);
+  height: calc(100vh - ${colorPickerHeightInRem * 1.25}rem);
   text-align: center;
 `;
 
 const ColoringPageStyled = styled(ColoringPage)`
   width: auto;
   height: 100%;
+`;
+
+const CurrentColor = styled.aside<{ color: string }>`
+  content: ' ';
+  width: 50%;
+  height: ${colorPickerHeightInRem / 4}rem;
+  background-color: ${({ color }) => color};
 `;
